@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-//const loginbutton = '#root > form > button';
 
 async function begin() {
     console.log("Check Process Start...");
@@ -13,13 +12,21 @@ async function begin() {
         console.log('Login..');
         
         await page.click('#root > form > button');
-        await page.waitForNavigation({ waitUntil: 'networkidle0'}),
-        
-        //await page.goto('https://chang14.netlify.app');
+        await page.waitForNavigation({ waitUntil: 'networkidle0'});
      
         console.log('Login Success!');
-
-
+        let i;
+        for(i = 1; i <= 5; i++){
+            await page.click('#root > div > div.sc-dlfnbm.bcaJjD > div.sc-jSgupP.ckDfJz');
+            console.log('Morning Check!');
+    
+            await page.on("dialog", (dialog) => {
+                console.log("dialog");
+                dialog.accept();
+            })
+            console.log(`Reloading... : ${i}`);
+        }
+        
     } catch(error) {
         console.log(error);
     }
