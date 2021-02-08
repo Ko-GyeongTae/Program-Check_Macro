@@ -19,11 +19,8 @@ async function begin() {
         for(i = 1; i <= 5; i++){
             await page.click('#root > div > div.sc-dlfnbm.bcaJjD > div.sc-jSgupP.ckDfJz');
             console.log('Morning Check!');
-    
-            await page.on("dialog", (dialog) => {
-                console.log("dialog");
-                dialog.accept();
-            })
+
+            await Handle_alert(page);
             console.log(`Reloading... : ${i}`);
         }
         
@@ -33,3 +30,7 @@ async function begin() {
 }
 
 begin();
+
+async function Handle_alert (_page) {
+    await popup.click('[name="__CONFIRM__"]');
+}
