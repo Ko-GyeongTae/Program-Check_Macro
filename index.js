@@ -41,7 +41,7 @@ function roop() {
     let Mtime = newDate.toFormat("MI");
     let Stime = newDate.toFormat("SS");
     console.log(`${Htime}:${Mtime}:${Stime}`);
-    if (Stime === "30") {
+    if (Htime === "07" && Mtime === "37" && Stime === "03") {
       begin();
     }
   }, 1000);
