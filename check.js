@@ -16,7 +16,7 @@ async function begin() {
      
         console.log('Login Success!');
         let i;
-        for(i = 1; i <= 5; i++){
+        for(i = 1; i <= 1; i++){
             await page.click('#root > div > div.sc-dlfnbm.bcaJjD > div.sc-jSgupP.ckDfJz');
             console.log('Morning Check!');
 
